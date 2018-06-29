@@ -16,4 +16,12 @@ public interface ComService {
     @POST("ttd-fund-user/userInfo/managerAppLogin")
     Observable<HttpResult<UserEntity, Object>> login(@Field("loginName") String loginName,
                                                                 @Field("password") String password);
+
+    /**
+     * 用户-发短信验证码
+     */
+    @FormUrlEncoded
+    @POST("ttd-fund-user/organizationStructure/sendValidationSms")
+    Observable<HttpResult<Object, Object>> sendMsgCode(@Field("userEmail") String userEmail);
+
 }
